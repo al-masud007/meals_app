@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meals/data/dummy_data.dart';
+import 'package:meals/widgets/category_grid_item.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});
@@ -16,12 +18,8 @@ class CategoryScreen extends StatelessWidget {
           mainAxisSpacing: 20,
         ),
         children: [
-          Text('Category 1', style: TextStyle(color: Colors.white)),
-          Text('Category 2', style: TextStyle(color: Colors.white)),
-          Text('Category 3', style: TextStyle(color: Colors.white)),
-          Text('Category 4', style: TextStyle(color: Colors.white)),
-          Text('Category 5', style: TextStyle(color: Colors.white)),
-          Text('Category 6', style: TextStyle(color: Colors.white)),
+          for (final category in availableCategories)
+            CategoryGridItem(category: category),
         ],
       ),
     );
