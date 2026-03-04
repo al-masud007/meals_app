@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:meals/model/category.dart';
-import 'package:meals/model/meal.dart';
+import 'package:meals/models/category.dart';
+import 'package:meals/models/meal.dart';
 
 final availableCategories = [
   const Category(id: 'c1', title: 'Italian', color: Colors.purple),
@@ -144,11 +144,7 @@ final dummyMeals = [
   ),
   Meal(
     id: 'm5',
-    categories: [
-      'c2',
-      'c5',
-      'c10',
-    ],
+    categories: ['c2', 'c5', 'c10'],
     title: 'Salad with Smoked Salmon',
     affordability: Affordability.luxurious,
     complexity: Complexity.simple,
