@@ -30,7 +30,7 @@ final dummyMeals = [
     affordability: Affordability.affordable,
     complexity: Complexity.simple,
     imageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+        'https://cdn.pixabay.com/photo/2017/02/15/10/39/spaghetti-2068217_1280.jpg',
     duration: 20,
     ingredients: [
       '4 Tomatoes',
@@ -145,8 +145,8 @@ final dummyMeals = [
   Meal(
     id: 'm5',
     categories: [
-      'c2'
-          'c5',
+      'c2',
+      'c5',
       'c10',
     ],
     title: 'Salad with Smoked Salmon',
