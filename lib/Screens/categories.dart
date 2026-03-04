@@ -1,4 +1,3 @@
-// import 'package:flutter/foundation.dart' hide Category;
 import 'package:flutter/material.dart';
 import 'package:meals/Screens/meals.dart';
 import 'package:meals/data/dummy_data.dart';
