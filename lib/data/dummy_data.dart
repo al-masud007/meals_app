@@ -30,7 +30,7 @@ final dummyMeals = [
     affordability: Affordability.affordable,
     complexity: Complexity.simple,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2017/02/15/10/39/spaghetti-2068217_1280.jpg',
+        'https://images.archanaskitchen.com/images/recipes/world-recipes/pasta-recipes/medium_Spaghetti_Pasta_Recipe_In_Creamy_Tomato_Sauce_Kids_Recipes_Made_With_Del_Monte_3_d6522012db.jpg',
     duration: 20,
     ingredients: [
       '4 Tomatoes',
