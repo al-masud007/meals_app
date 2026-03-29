@@ -28,6 +28,7 @@ class MealDetailsScreen extends StatelessWidget {
           ),
 
           SizedBox(height: 10),
+          // ignore: non_constant_identifier_names
           for (final Ingredient in meal.ingredients)
             Text(
               Ingredient,
@@ -37,11 +38,15 @@ class MealDetailsScreen extends StatelessWidget {
             ),
 
           SizedBox(height: 14),
-          Text(
-            'Steps',
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              color: Theme.of(context).colorScheme.primary,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: EdgeInsetsGeometry.symmetric(horizontal: 12, vertical: 8),
+            child: Text(
+              textAlign: TextAlign.center,
+              'Steps',
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                color: Theme.of(context).colorScheme.primary,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
 
