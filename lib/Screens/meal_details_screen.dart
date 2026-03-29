@@ -10,11 +10,50 @@ class MealDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(meal.title)),
-      body: Image(
-        image: NetworkImage(meal.imageUrl),
-        width: double.infinity,
-        height: 300,
-        fit: BoxFit.cover,
+      body: Column(
+        children: [
+          Image(
+            image: NetworkImage(meal.imageUrl),
+            width: double.infinity,
+            height: 300,
+            fit: BoxFit.cover,
+          ),
+          SizedBox(height: 14),
+          Text(
+            'Ingredients',
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              color: Theme.of(context).colorScheme.primary,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+
+          SizedBox(height: 10),
+          for (final Ingredient in meal.ingredients)
+            Text(
+              Ingredient,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+            ),
+
+          SizedBox(height: 14),
+          Text(
+            'Steps',
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              color: Theme.of(context).colorScheme.primary,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+
+          SizedBox(height: 10),
+          for (final step in meal.steps)
+            Text(
+              step,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+            ),
+        ],
       ),
     );
   }
