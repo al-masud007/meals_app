@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:meals/Screens/categories.dart';
+
 import 'package:meals/Screens/tabs_screen.dart';
 
 final theme = ThemeData(
@@ -22,6 +22,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: theme, home: TabsScreen());
+    return MaterialApp(
+      theme: theme,
+      home: TabsScreen(onToggleFavorite: (meal) {}),
+    );
   }
 }
