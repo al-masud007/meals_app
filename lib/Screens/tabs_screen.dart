@@ -6,7 +6,7 @@ import 'package:meals/data/dummy_data.dart';
 import 'package:meals/models/meal.dart';
 import 'package:meals/widgets/main_drawer.dart';
 
-const KinitialFilters = {
+const kinitialFilters = {
   Filter.gltenfree: false,
   Filter.lactosefree: false,
   Filter.vegiterian: false,
@@ -24,7 +24,7 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedPageIndex = 0;
   final List<Meal> _favoriteMeals = [];
-  Map<Filter, bool> _selectedFilters = KinitialFilters;
+  Map<Filter, bool> _selectedFilters = kinitialFilters;
 
   void _showInfoMessage(String message) {
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
@@ -63,7 +63,7 @@ class _TabsScreenState extends State<TabsScreen> {
         ),
       );
       setState(() {
-        _selectedFilters = results ?? KinitialFilters;
+        _selectedFilters = results ?? kinitialFilters;
       });
     }
     // } else {
