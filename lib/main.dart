@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:meals/Screens/filter_screen.dart';
 
 import 'package:meals/Screens/tabs_screen.dart';
 

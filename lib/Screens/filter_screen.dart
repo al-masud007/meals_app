@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:meals/Screens/tabs_screen.dart';
-import 'package:meals/main.dart';
 import 'package:meals/widgets/main_drawer.dart';
 
 enum Filter { gltenfree, lactosefree, vegiterian, vegan }
@@ -22,7 +21,6 @@ class _FilterScreenState extends State<FilterScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _gluteenFreeMealFilter = widget.currentFilter[Filter.gltenfree]!;
     _lactoseFreeMealFilter = widget.currentFilter[Filter.lactosefree]!;
@@ -34,18 +32,18 @@ class _FilterScreenState extends State<FilterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Your Filters')),
-      drawer: MainDrawer(
-        onSelectScreen: (identifier) {
-          Navigator.of(context).pop();
-          if (identifier == 'meals') {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (ctx) => TabsScreen(onToggleFavorite: (meal) {}),
-              ),
-            );
-          }
-        },
-      ),
+      // drawer: MainDrawer(
+      //   onSelectScreen: (identifier) {
+      //     Navigator.of(context).pop();
+      //     if (identifier == 'meals') {
+      //       Navigator.of(context).push(
+      //         MaterialPageRoute(
+      //           builder: (ctx) => TabsScreen(onToggleFavorite: (meal) {}),
+      //         ),
+      //       );
+      //     }
+      //   },
+      // ),
       body: PopScope(
         canPop: false,
         onPopInvoked: (bool didPop) {
