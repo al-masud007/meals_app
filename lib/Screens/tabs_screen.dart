@@ -4,7 +4,7 @@ import 'package:meals/Screens/categories.dart';
 import 'package:meals/Screens/filter_screen.dart';
 import 'package:meals/Screens/meals.dart';
 import 'package:meals/data/dummy_data.dart';
-import 'package:meals/meals_provider.dart';
+import 'package:meals/providers/meals_provider.dart';
 import 'package:meals/models/meal.dart';
 import 'package:meals/widgets/main_drawer.dart';
 
