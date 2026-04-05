@@ -77,7 +77,7 @@ class MealItem extends StatelessWidget {
                         ),
                         SizedBox(width: 20),
                         MealItemTrait(icon: Icons.work, label: complexityText),
-                        SizedBox(width: 20),
+                        SizedBox(width: 18.2),
                         MealItemTrait(
                           icon: Icons.attach_money,
                           label: affordabilityText,
