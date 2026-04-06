@@ -7,7 +7,6 @@ import 'package:meals/providers/favorite_provider.dart';
 import 'package:meals/providers/filters_provider.dart';
 import 'package:meals/providers/meals_provider.dart';
 import 'package:meals/widgets/main_drawer.dart';
-import 'package:flutter_riverpod/legacy.dart';
 
 const kinitialFilters = {
   Filter.gltenfree: false,
@@ -39,16 +38,13 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
         MaterialPageRoute(builder: (ctx) => FilterScreen()),
       );
     }
-    // } else {
-    //   Navigator.of(context).pop();
-    // }
   }
 
   @override
   Widget build(BuildContext context) {
     final meals = ref.watch(mealsProvider);
+    final activeFilters = ref.watch(filtersProvider);
     final availableMeal = meals.where((meal) {
-      final activeFilters = ref.read(filtersProvider);
       if (activeFilters[Filter.gltenfree]! && !meal.isGlutenFree) {
         return false;
       }
