@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:meals/providers/filters_provider.dart';
+import 'package:flutter_riverpod/legacy.dart';
 
-enum Filter { gltenfree, lactosefree, vegiterian, vegan }
-
-class FilterScreen extends StatefulWidget {
-  const FilterScreen({super.key, required this.currentFilter});
-
-  final Map<Filter, bool> currentFilter;
+class FilterScreen extends ConsumerStatefulWidget {
+  const FilterScreen({super.key});
 
   @override
-  State<FilterScreen> createState() => _FilterScreenState();
+  ConsumerState<FilterScreen> createState() => _FilterScreenState();
 }
 
-class _FilterScreenState extends State<FilterScreen> {
+class _FilterScreenState extends ConsumerState<FilterScreen> {
   var _gluteenFreeMealFilter = false;
   var _lactoseFreeMealFilter = false;
   var _vegeterianMealFilter = false;
@@ -20,10 +19,11 @@ class _FilterScreenState extends State<FilterScreen> {
   @override
   void initState() {
     super.initState();
-    _gluteenFreeMealFilter = widget.currentFilter[Filter.gltenfree]!;
-    _lactoseFreeMealFilter = widget.currentFilter[Filter.lactosefree]!;
-    _vegeterianMealFilter = widget.currentFilter[Filter.vegiterian]!;
-    _veganMealFilter = widget.currentFilter[Filter.vegan]!;
+    final activeFilter = ref.read(filtersProvider);
+    _gluteenFreeMealFilter = activeFilter[Filter.gltenfree]!;
+    _lactoseFreeMealFilter = activeFilter[Filter.lactosefree]!;
+    _vegeterianMealFilter = activeFilter[Filter.vegiterian]!;
+    _veganMealFilter = activeFilter[Filter.vegan]!;
   }
 
   @override
@@ -43,10 +43,10 @@ class _FilterScreenState extends State<FilterScreen> {
       //   },
       // ),
       body: PopScope(
-        canPop: false,
+        canPop: true,
         onPopInvoked: (bool didPop) {
           if (didPop) return;
-          Navigator.of(context).pop({
+          ref.read(filtersProvider.notifier).setFilters({
             Filter.gltenfree: _gluteenFreeMealFilter,
             Filter.lactosefree: _lactoseFreeMealFilter,
             Filter.vegiterian: _vegeterianMealFilter,
