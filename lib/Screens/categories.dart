@@ -69,10 +69,19 @@ class _CategoryScreenState extends State<CategoryScreen>
         ],
       ),
 
-      builder: (context, child) => Padding(
-        padding: EdgeInsets.only(top: 100 - _animatiomController.value * 100),
+      builder: (context, child) => SlideTransition(
+        position: Tween<Offset>(begin: Offset(0, 0.3), end: Offset(0, 0))
+            .animate(
+              CurvedAnimation(
+                parent: _animatiomController,
+                curve: Curves.easeInOut,
+              ),
+            ),
         child: child,
       ),
+      //  Padding(
+      //   padding: EdgeInsets.only(top: 100 - _animatiomController.value * 100),
+      //  ),
     );
   }
 }
