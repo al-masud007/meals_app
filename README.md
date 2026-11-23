@@ -2,6 +2,16 @@
 
 A Flutter application for browsing recipes and meal categories with real-time dietary filtering and favorite tracking, built using Flutter and Riverpod for state management.
 
+## Screenshots
+
+| Categories | Category Meals | Meal Details |
+| :---: | :---: | :---: |
+| <img src="screenshots/categories.jpeg" width="220" alt="Categories Screen" /> | <img src="screenshots/category-meals.jpeg" width="220" alt="Category Meals Screen" /> | <img src="screenshots/meal-details.jpeg" width="220" alt="Meal Details Screen" /> |
+
+| Navigation Drawer | Favorites | Single Category |
+| :---: | :---: | :---: |
+| <img src="screenshots/drawer.jpeg" width="220" alt="Navigation Drawer" /> | <img src="screenshots/favorites.jpeg" width="220" alt="Favorites Screen" /> | <img src="screenshots/breakfast.jpeg" width="220" alt="Breakfast Meals Screen" /> |
+
 ## Features
 
 - **Category Browsing**: Browse meals organized across different categories (Italian, Quick & Easy, Hamburgers, etc.) with entry slide animations.
@@ -58,6 +68,18 @@ lib/
 
 ### Run the App
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone or download the repository:
+   ```bash
+   git clone <repository-url>
+   cd meals
+   ```
+
+2. Fetch package dependencies:
+   ```bash
+   flutter pub get
+   ```
+
+3. Start the app on a connected device:
+   ```bash
+   flutter run
+   ```
